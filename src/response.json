@@ -1,0 +1,143 @@
+{
+  "name": "상품명",
+  "price": 1000000,
+  "discount_price": 500000,
+  "photo_url": "https://s3.ap-northeast-2.amazonaws.com/coordi-img/062310d6c7db1e24fe95b5c976346b7d",
+  "discount_rate": "50%",
+  "images": ["https://s3.ap-northeast-2.amazonaws.com/coordi-img/062310d6c7db1e24fe95b5c976346b7d", "https://dmhav9aom0ctr.cloudfront.net/29c218bb23b5116caee80fa57f669567"],
+  "options": {
+    "names": ["색상", "사이즈", "기장"],
+    "contents": [
+      ["네이비", "브라운", "블랙", "화이트"],
+      ["Small", "Medium", "Large"],
+      ["Short", "Long"]
+    ],
+    "data": [
+      {
+        "positions": ["네이비", "Small", "Short"],
+        "data": { "stock_count": 20, "option_price": 0 }
+      },
+      {
+        "positions": ["네이비", "Small", "Long"],
+        "data": { "stock_count": 20, "option_price": 5000 }
+      },
+      {
+        "positions": ["네이비", "Medium", "Short"],
+        "data": { "stock_count": 20, "option_price": 5000 }
+      },
+      {
+        "positions": ["네이비", "Medium", "Long"],
+        "data": { "stock_count": 20, "option_price": 10000 }
+      },
+      {
+        "positions": ["네이비", "Large", "Short"],
+        "data": { "stock_count": 0, "option_price": 10000 }
+      },
+      {
+        "positions": ["네이비", "Large", "Long"],
+        "data": { "stock_count": 0, "option_price": 15000 }
+      },
+      {
+        "positions": ["브라운", "Small", "Short"],
+        "data": { "stock_count": 15, "option_price": 5000 }
+      },
+      {
+        "positions": ["브라운", "Small", "Long"],
+        "data": { "stock_count": 15, "option_price": 10000 }
+      },
+      {
+        "positions": ["브라운", "Medium", "Short"],
+        "data": { "stock_count": 0, "option_price": 10000 }
+      },
+      {
+        "positions": ["브라운", "Medium", "Long"],
+        "data": { "stock_count": 15, "option_price": 15000 }
+      },
+      {
+        "positions": ["브라운", "Large", "Short"],
+        "data": { "stock_count": 0, "option_price": 15000 }
+      },
+      {
+        "positions": ["브라운", "Large", "Long"],
+        "data": { "stock_count": 0, "option_price": 20000 }
+      },
+      {
+        "positions": ["블랙", "Small", "Short"],
+        "data": { "stock_count": 10, "option_price": 10000 }
+      },
+      {
+        "positions": ["블랙", "Small", "Long"],
+        "data": { "stock_count": 10, "option_price": 15000 }
+      },
+      {
+        "positions": ["블랙", "Medium", "Short"],
+        "data": { "stock_count": 10, "option_price": 15000 }
+      },
+      {
+        "positions": ["블랙", "Medium", "Long"],
+        "data": { "stock_count": 0, "option_price": 20000 }
+      },
+      {
+        "positions": ["블랙", "Large", "Short"],
+        "data": { "stock_count": 0, "option_price": 20000 }
+      },
+      {
+        "positions": ["블랙", "Large", "Long"],
+        "data": { "stock_count": 0, "option_price": 25000 }
+      },
+      {
+        "positions": ["화이트", "Small", "Short"],
+        "data": { "stock_count": 0, "option_price": 15000 }
+      },
+      {
+        "positions": ["화이트", "Small", "Long"],
+        "data": { "stock_count": 0, "option_price": 20000 }
+      },
+      {
+        "positions": ["화이트", "Medium", "Short"],
+        "data": { "stock_count": 0, "option_price": 20000 }
+      },
+      {
+        "positions": ["화이트", "Medium", "Long"],
+        "data": { "stock_count": 0, "option_price": 25000 }
+      },
+      {
+        "positions": ["화이트", "Large", "Short"],
+        "data": { "stock_count": 0, "option_price": 25000 }
+      },
+      {
+        "positions": ["화이트", "Large", "Long"],
+        "data": { "stock_count": 0, "option_price": 30000 }
+      }
+    ]
+  },
+  "html": "<div style=\"padding: 20px 0 10px 0; color: #b00000;font-size: 20px;font-weight: bold;\">주문폭주로 인해 주문을 빨리한 순서대로 배송이 나갑니다! 서둘러 주세요!</div><p><img src=\"https://dmhav9aom0ctr.cloudfront.net/42e9d8c19266bbafd4955afdb6552daa\" width=\"100%\"></p>",
+  "partner": {
+    "name": "lookpin-mall",
+    "message": "최대 50% SALE!",
+    "photo_url": "https://s3.ap-northeast-2.amazonaws.com/store-main-img/7e67be079de5fc2d02bb6bfcae25b789",
+    "product_info": [
+      ["제품소재", "상품상세 참조"],
+      ["색상", "상품상세 참조"],
+      ["치수", "상품상세 참조"],
+      ["제조자", "상품상세 참조"],
+      ["제조국", "상품상세 참조"],
+      ["제조연월", "상품상세 참조"],
+      ["세탁방법", "상품상세 참조"],
+      ["취급주의사항", "상품상세 참조"],
+      ["품질보증기준", "상품상세 참조"]
+    ],
+    "partner_info": [
+      ["업체명", "업체"],
+      ["사업자등록번호", "000-00-00000"],
+      ["대표자명", "대표자"],
+      ["전자우편주소", "look@pin.co.kr"],
+      ["통신판매신고번호", "2019-서울강남-00000"],
+      ["AS전화번호", "02-0000-0000"],
+      ["운영시간", "오전11시-오후6시 전화 010-0000-0000 010-0000-0000"],
+      ["반품주소지", "서울특별시 OO구 OO로 00길 00-00 501호"],
+      ["반송택배비", "착불 택배비 5000원"],
+      ["", "선불 택배비 5000원"]
+    ]
+  }
+}
