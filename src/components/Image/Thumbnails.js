@@ -4,7 +4,7 @@ import Image from "./index";
 
 const Container = styled.div`
   display: flex;
-  width: ${props => props.width};
+  width: 100%;
   height: ${props => props.height};
   img {
     padding-left: 5px;
@@ -15,9 +15,9 @@ const Container = styled.div`
   }
 `;
 
-const Thumbnails = ({ images, width, height, ...rest }) => {
+const Thumbnails = ({ images, ...rest }) => {
   return (
-    <Container width={width} height={height} {...rest}>
+    <Container {...rest}>
       {images.map(src => (
         <Image key={src} src={src} alt="thumbnail" width="auto" height="100%" />
       ))}
@@ -27,8 +27,7 @@ const Thumbnails = ({ images, width, height, ...rest }) => {
 
 Thumbnails.defaultProps = {
   images: [],
-  width: "100%",
-  height: "10%"
+  height: "100px"
 };
 
 export default React.memo(Thumbnails);
