@@ -1,20 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
 import * as productActions from "../redux/product";
 // layout
 import DefaultLayout from "../components/Layout/DefaultLayout";
-
 // container
 import ImageContainer from "../containers/ImageContainer";
 import InformationContainer from "../containers/InformationContainer";
 import PartnerContainer from "../containers/PartnerContainer";
-
-const Row = styled.div`
-  display: flex;
-  width: 100%;
-  /* height: 60%; */
-`;
+// components
+import Row from "../components/Row";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -23,14 +17,15 @@ const ProductPage = () => {
   useEffect(() => {
     // 상품 상세 정보 호출
     dispatch(productActions.getProductDetail());
-  });
+    // dispatch(productActions.initProductDetail());
+  }, [dispatch]);
 
   // unmount
   useEffect(() => {
     return () => {
-      console.log("will unmount");
+      dispatch(productActions.resetProductDetail());
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <DefaultLayout>

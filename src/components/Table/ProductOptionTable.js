@@ -42,29 +42,44 @@ const Count = styled.span`
   padding: 0 20px;
 `;
 
-const ProductOptionTable = () => {
+const OptionRow = React.memo(({ product, handleCancel, decreaseCount, increaseCount, index }) => {
+  return (
+    <>
+      <tr className="title">
+        <td className="header">{`${product.색상}/${product.사이즈}/${product.기장}`}</td>
+        <td className="right">
+          <FontAwesomeIcon icon={faWindowClose} onClick={e => handleCancel(index)} />
+        </td>
+      </tr>
+      <tr className="price">
+        <td className="header">
+          <ControlBox onClick={() => decreaseCount(index)}>-</ControlBox>
+          <Count>{product.count}</Count>
+          <ControlBox onClick={() => increaseCount(index)}>+</ControlBox>
+        </td>
+        <td className="right">{utils.numberWithCommas(`${(product.price + product.option_price) * product.count}`)}원</td>
+      </tr>
+    </>
+  );
+});
+
+const ProductOptionTable = ({ products, ...rest }) => {
   return (
     <Table>
       <tbody>
-        {/* Item Title */}
-        <tr className="title">
-          <td className="header">네이비/Medium/Short</td>
-          <td className="right">
-            <FontAwesomeIcon icon={faWindowClose} />
-          </td>
-        </tr>
-        {/* Count/Price */}
-        <tr className="price">
-          <td className="header">
-            <ControlBox>-</ControlBox>
-            <Count>2</Count>
-            <ControlBox>+</ControlBox>
-          </td>
-          <td className="right">{utils.numberWithCommas("2000000")}원</td>
-        </tr>
+        {products.map((product, index) => (
+          <OptionRow key={index} {...rest} product={product} index={index} />
+        ))}
       </tbody>
     </Table>
   );
+};
+
+ProductOptionTable.defaultProps = {
+  products: [],
+  handleCancel: () => {},
+  increaseCount: () => {},
+  decreaseCount: () => {}
 };
 
 export default ProductOptionTable;
