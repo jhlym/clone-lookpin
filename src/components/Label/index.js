@@ -10,6 +10,11 @@ const Span = styled.span`
   font-weight: 600;
   padding: 0 20px;
   margin-left: 10px;
+  @media (max-width: 600px) {
+    padding: 0;
+    margin: 0;
+    width: 30%;
+  }
 `;
 
 const Label = ({ text }) => {

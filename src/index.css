@@ -36,3 +36,6 @@ hr {
 .flex__end {
   justify-content: flex-end;
 }
+.flex__wrap {
+  flex-wrap: wrap;
+}

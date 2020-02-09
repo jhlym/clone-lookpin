@@ -7,6 +7,9 @@ import Thumbnails from "../components/Image/Thumbnails";
 
 const Layout = styled.figure`
   width: 50%;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const ImageContainer = ({ ...rest }) => {

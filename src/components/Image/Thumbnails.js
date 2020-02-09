@@ -4,6 +4,7 @@ import Image from "./index";
 
 const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: ${props => props.height};
   img {
