@@ -11,6 +11,7 @@
 | 명칭              | 버전     |
 | ----------------- | -------- |
 | react             | v16.12.0 |
+| react-router-dom  | v5.1.2   |
 | react-redux       | v7.1.3   |
 | redux             | v4.0.5   |
 | redux-actions     | v2.6.5   |
