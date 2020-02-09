@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-import { getProductDetail } from "../redux/product";
+import * as productActions from "../redux/product";
 // layout
 import DefaultLayout from "../components/Layout/DefaultLayout";
 
@@ -13,23 +13,32 @@ import PartnerContainer from "../containers/PartnerContainer";
 const Row = styled.div`
   display: flex;
   width: 100%;
-  height: 50%;
-  /* FIXME: REMOVED */
-  background-color: red;
+  /* height: 60%; */
 `;
 
 const ProductPage = () => {
   const dispatch = useDispatch();
+  const detail = useSelector(({ product: { detail } }) => detail);
+  // mount
   useEffect(() => {
     // 상품 상세 정보 호출
-    dispatch(getProductDetail());
+    dispatch(productActions.getProductDetail());
   });
+
+  // unmount
+  useEffect(() => {
+    return () => {
+      console.log("will unmount");
+    };
+  }, []);
+
   return (
     <DefaultLayout>
       <Row>
         <ImageContainer />
         <InformationContainer />
       </Row>
+      <div dangerouslySetInnerHTML={{ __html: detail && detail.html }}></div>
       <PartnerContainer />
     </DefaultLayout>
   );
