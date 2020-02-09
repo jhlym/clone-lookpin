@@ -63,7 +63,10 @@ const InformationContainer = ({ ...rest }) => {
       if (product.key === key) hasProduct = true;
     });
     //  재고가 없는 경우
-    if (detail.options.case[key].stock_count <= 0) alert("재고가 없습니다.");
+    if (detail.options.case[key].stock_count <= 0) {
+      alert("재고가 없습니다.");
+      return;
+    }
     // 이미 있는 경우
     if (hasProduct) {
       alert("이미 선택한 옵션입니다.");
@@ -120,7 +123,11 @@ const InformationContainer = ({ ...rest }) => {
 
   // 총 가격
   const getTotalPrice = useCallback(() => {
-    return products.reduce((total, product) => (total += product.count * (product.price + product.option_price)), 0);
+    return products.reduce(
+      (total, product) =>
+        (total += product.count * (product.price + product.option_price)),
+      0
+    );
   }, [products]);
 
   if (!detail) return null;
@@ -135,18 +142,35 @@ const InformationContainer = ({ ...rest }) => {
       <Number text={detail.price} unit="원" discount />
       <Row>
         <Number text={detail.discount_price} unit="원" />
-        <Number text={detail.discount_rate} red style={{ paddingLeft: "10px" }} />
+        <Number
+          text={detail.discount_rate}
+          red
+          style={{ paddingLeft: "10px" }}
+        />
       </Row>
       <hr />
       {/* 옵션 선택 */}
       <SubText>옵션선택</SubText>
-      <Row className="flex__column" onChange={e => handleSelectBox(e, addProducts)}>
+      <Row
+        className="flex__column"
+        onChange={e => handleSelectBox(e, addProducts)}
+      >
         {detail.options.names.map((name, index) => (
-          <SelectBox key={name} options={detail.options.contents[index]} name={name} disabled={index !== 0} />
+          <SelectBox
+            key={name}
+            options={detail.options.contents[index]}
+            name={name}
+            disabled={index !== 0}
+          />
         ))}
       </Row>
       {/* 선택 결과 테이블 */}
-      <ProductOptionTable products={products} handleCancel={handleCancel} increaseCount={increaseCount} decreaseCount={decreaseCount} />
+      <ProductOptionTable
+        products={products}
+        handleCancel={handleCancel}
+        increaseCount={increaseCount}
+        decreaseCount={decreaseCount}
+      />
       {/* 총 금액 */}
       <Row className="flex__end">
         <SubText style={{ paddingRight: "30px" }}>총 상품 금액</SubText>
